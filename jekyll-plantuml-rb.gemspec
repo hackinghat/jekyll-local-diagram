@@ -4,6 +4,6 @@ Gem::Specification.new do |s|
   s.summary     = "Generate local plantuml diagrams with support for non-UML diagrams, to be used with jekyll-plantuml-build-action"
   s.authors     = ["Steve Knight"]
   s.email       = "steve@hackinghat.com"
-  s.files       = ["lib/jekyll-plantuml-dot.rb"]
+  s.files       = ["lib/jekyll-plantuml-rb.rb"]
   s.license       = "MIT"
 end

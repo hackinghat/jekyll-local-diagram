@@ -1,8 +1,4 @@
-require 'digest'
-require 'fileutils'
-require 'logger'
-
-module Jekyll::LocalDiagram
+module JekyllLocalDiagram
   class MathJaxBlock < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
@@ -43,4 +39,4 @@ module Jekyll::LocalDiagram
   end
 end
 
-Liquid::Template.register_tag('mathjax', Jekyll::MathJaxBlock)
+Liquid::Template.register_tag('mathjax', JekyllLocalDiagram::MathJaxBlock)

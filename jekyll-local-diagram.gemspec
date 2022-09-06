@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.files         = Dir["**/*.rb"]
   s.require_paths = ["lib"]
   s.license       = "MIT"
-  s.add_dependency "liquid", "~> 3.0"
+  s.add_dependency "liquid", "~> 4.0"
 end

@@ -10,22 +10,18 @@ module JekyllLocalDiagram
     def render(context)
       site = context.registers[:site]
       name = Digest::MD5.hexdigest(super)
-      path = File.join('assets', 'images', 'uml')
+      path = File.join('assets', 'images', 'tex')
       type = 'svg'
       mimetype = 'svg+xml'
       imgfile = "#{name}.#{type}"
       imgpath = File.join(site.source, path)
       if !File.exists?(File.join(imgpath, imgfile))
-        uml = File.join(imgpath, "#{name}.uml")
         img = File.join(imgpath, imgfile)
         if File.exists?(img)
           @logger.debug("File #{imgfile} already exists (#{File.size(img)} bytes)")
         else
-          FileUtils.mkdir_p(File.dirname(uml))
-          File.open(uml, 'w') { |f|
-            f.write(super)
-          }
-          cmd = "cat #{uml} | tex2svg > #{imgpath}"
+          FileUtils.mkdir_p(imgpath)
+          cmd = "tex2svg \"#{super}\"> #{img}"
           @logger.debug("Executing mathjax command: #{cmd}")
           system(cmd) or raise "MathJax error: #{super}"
           site.static_files << Jekyll::StaticFile.new(

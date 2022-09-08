@@ -21,7 +21,7 @@ module JekyllLocalDiagram
         if File.exists?(img)
           @logger.debug("File #{imgfile} already exists (#{File.size(img)} bytes)")
         else
-          FileUtils.mkdir_p(File.dirname(uml))
+          FileUtils.mkdir_p(imgpath)
           File.open(uml, 'w') { |f|
             f.write(super)
           }

@@ -4,7 +4,7 @@ module JekyllLocalDiagram
       super
       @ext = 'uml'
       @blockclass = 'plantuml'
-      @jarpath = File.join(File.expand_path(File.join(File.dirname(__FILE__), '..')), '/ext/plantuml.jar')
+      @jarpath = File.join(File.expand_path(File.join(File.dirname(__FILE__), '../..')), '/ext/plantuml.jar')
     end
 
     def build_cmd(input, output)

@@ -4,7 +4,7 @@ module JekyllLocalDiagram
       super
       @ext = 'mmd'
       @blockclass = 'mermaid'
-      @puppetercfg = File.join(File.expand_path(File.join(File.dirname(__FILE__), '..')), '/cfg/puppeteer.json')
+      @puppetercfg = File.join(File.expand_path(File.join(File.dirname(__FILE__), '../..')), '/cfg/puppeteer.json')
     end
 
     def build_cmd(input, output)

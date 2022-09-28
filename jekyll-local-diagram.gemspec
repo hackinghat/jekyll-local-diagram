@@ -3,7 +3,7 @@ require 'net/http'
 require 'fileutils'
 
 # Retrieve the latest PlantUML jar file from Github
-PLANTUML_LOCAL_INSTALL_PATH = File.join(File.expand_path(File.dirname(__FILE__), ".."), "/ext/plantuml.jar")
+PLANTUML_LOCAL_INSTALL_PATH = File.join(File.dirname(__FILE__), "/ext/plantuml.jar")
 FileUtils.mkdir_p(File.dirname(PLANTUML_LOCAL_INSTALL_PATH))
 
 if !File.exists? PLANTUML_LOCAL_INSTALL_PATH 

@@ -1,8 +1,40 @@
 # jekyll-local-diagram
 
+# Quickstart
+
+## Local Jekyll 
+
+If you're running/building your site outside of a 
+
+For a local Jekyll host you should add the following to your `Gemfile`
+
+    group :jekyll_plugins do
+      ...
+      gem "jekyll-local-diagram"
+    end
+
+It should also appear in your `_config.yml` file thus:
+
+    plugins:
+    - jekyll-local-diagram
+
+Then either run:
+    
+    gem install jekyll-local-diagram
+    
+ Or run 
+ 
+    bundle update
+
+## Github Pages / Docker
+
+Take a look at [jekyll-local-diagram-build-action](https://github.com/hackinghat/jekyll-local-diagram-build-action) for ways that you can run `jekyll-local-diagram` in a container or as part of a GitHub CI/CD build action to publish to GitHub pages.
+
+# Documentation
+
 # What
 
-This is a [Jekyll](https://jekyllrb.com) Plugin that will generate SVGs as static assets for a Jekyll site.
+This is a [Jekyll](https://jekyllrb.com) Plugin that will generate SVGs as static assets that can be embedded into a Jekyll site.
 
 # Why?
 
@@ -25,16 +57,26 @@ To illustrate this consider the following diagram:
 
 ![](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuNB9JovMqBLJ2CX9p2i9zVLHi58eACeiIon9LKZ9J4mlIinLI4aiIUI2oOFKWlLOmUIBkHnIyrA0PW40)
 
-The downsides of this are two-fold: 
+This image is rendered just in time by hitting a service URL at www.plantuml.com where part of the URL includes a specially encoded string.
 
-1. The complexity of the diagram is limited by the length of the URL (circa 2,000 characters) - this limits the complexity of the diagrams that can be supported.
-2. The content of the diagram is leaked to a third-party by mime encoding the diagram text in the URL - this leaks the diagram to the server.
+    https://www.plantuml.com/plantuml/png/SoWkIImgAStDuNB9JovMqBLJ2CX9p2i9zVLHi58eACeiIon9LKZ9J4mlIinLI4aiIUI2oOFKWlLOmUIBkHnIyrA0PW40
 
-The first issue is the biggest deal-breaker, and indeed diagrams with lots of labels and notes are hard to create.  The second issue is potentially less of a concern but if we're making our repo private we may not want to leak sensitive design details to multiple third parties.
+That encoding includes some compression and something like [base64 encoding](https://plantuml.com/text-encoding) in order to arrive at as minimal URL as possible.  The approach for Mermaid diagrams is similar.
+
+The downsides of managing diagrams in this way are two-fold: 
+
+1. The complexity of the diagram is limited by the length of the URL (circa 2,000 characters) 
+2. The content of the diagram is leaked to a third-party by encoding the diagram text in the URL - this is over https but leaks the diagram to the server.
+
+The first issue is the biggest deal-breaker, and indeed diagrams with lots of labels and notes are hard to create.  
+
+The second issue is potentially less of a concern but if we're making our repo private we may not want to leak sensitive design details to multiple third parties.  Also knowing that this service could leak technical specs could make it a target for hackers.
 
 ## GitHub Pages Support
 
 GitHub pages does not allow the inclusion of arbitrary Jekyll plugins which makes [Jekyll PlantUML](https://github.com/yegor256/jekyll-plantuml) not usable on GitHub pages without additional components.  
+
+
 
 # How
 

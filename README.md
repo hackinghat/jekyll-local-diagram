@@ -23,7 +23,7 @@ Not withstanding this not all diagramming tools produce image assets that are lo
 
 To illustrate this consider the following diagram:
 
-![](//www.plantuml.com/plantuml/png/SoWkIImgAStDuNB9JovMqBLJ2CX9p2i9zVLHi58eACeiIon9LKZ9J4mlIinLI4aiIUI2oOFKWlLOmUIBkHnIyrA0PW40)
+![](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuNB9JovMqBLJ2CX9p2i9zVLHi58eACeiIon9LKZ9J4mlIinLI4aiIUI2oOFKWlLOmUIBkHnIyrA0PW40)
 
 The downsides of this are two-fold: 
 

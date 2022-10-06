@@ -20,11 +20,11 @@ end
 Gem::Specification.new do |s|
   s.name          = "jekyll-local-diagram"
   s.homepage      = "https://github.com/hackinghat/jekyll-local-diagram"
-  s.version       = "0.1.0"
+  s.version       = "0.1.2"
   s.summary       = "Generate local diagrams with support for non-UML diagrams, to be used with jekyll-local-diagrams-build-action"
   s.authors       = ["Steve Knight"]
   s.email         = "steve@hackinghat.com"
-  s.files         = Dir["lib/**/*.rb"]+Dir["ext/**/*.jar"]
+  s.files         = Dir["lib/**/*.rb"]+Dir["cfg/*"]
   s.require_paths = ["lib"]
   s.license       = "MIT"
   s.add_dependency "jekyll", "~> 4.2.2"

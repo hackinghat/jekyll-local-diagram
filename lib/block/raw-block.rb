@@ -1,7 +1,7 @@
 # From https://gist.github.com/phaer/1020852
 
 module JekyllLocalDiagram
-  class RawBlock < JekyllLocalDiagramBlock
+  class RawBlock < Liquid::Block
     def parse(tokens)
       @nodelist ||= []
       @nodelist.clear

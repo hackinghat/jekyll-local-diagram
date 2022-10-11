@@ -34,11 +34,14 @@ module JekyllLocalDiagram
                 }
                 cmd = build_cmd(txtfile, img)
                 @logger.debug("Executing #{@blockclass} command: #{cmd}")
-                system(cmd) or raise "#{@blockclass} error: #{super}"
-                site.static_files << Jekyll::StaticFile.new(
-                  site, site.source, path, imgfile
-                )
-                @logger.debug("File #{imgfile} created (#{File.size(img)} bytes)")
+                if !system(cmd) 
+                  @logger.error("#{@blockclass} error: #{super}")
+                else
+                  site.static_files << Jekyll::StaticFile.new(
+                    site, site.source, path, imgfile
+                  )
+                  @logger.debug("File #{imgfile} created (#{File.size(img)} bytes)")
+                end
               end
             end
             "<p><object data='#{site.baseurl}/#{path}/#{imgfile}' type='image/#{mimetype}' #{@html} class='#{@blockclass}'></object></p>"
@@ -49,4 +52,5 @@ end
 require 'block/plantuml-block'
 require 'block/mermaid-block'
 require 'block/mathjax-block'
+require 'block/raw-block'
 

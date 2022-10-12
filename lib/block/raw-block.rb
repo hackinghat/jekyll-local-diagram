@@ -7,7 +7,7 @@ module JekyllLocalDiagram
       @nodelist.clear
       
       while token = tokens.shift
-        if token =~ FullToken
+        if token =~ Liquid::BlockBody::FullToken
           if block_delimiter == $1
             end_tag
             return

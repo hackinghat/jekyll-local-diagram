@@ -36,11 +36,9 @@ In order to draw the diagrams locally the plugin assumes that you have the follo
 
 ### PlantUML Library Upgrade
 
-The `jekyll-local-diagram` plugin will install the latest version of the PlantUML jar when the gem is first installed.  In order to upgrade the PlantUML library uninstall and reinstall the `jekyll-local-diagram` gem.
+The `jekyll-local-diagram` plugin will install the latest version of the PlantUML jar when the gem is built.  When installing it from (RubyGems)[https://rubygems.org].
 
-    $ gem uninstall jekyll-local-diagram
-    Successfully uninstalled jekyll-local-diagram-0.0.1
-    $ gem install jekyll-local-diagram
+In order to use a specific version of the PlantUML jar you can package your own Gem and install it.
 
 ## Github Pages / Docker
 
@@ -67,6 +65,7 @@ However not all diagramming tools are created equal, some have broad support for
 * [GraphViz](https://graphviz.org/documentation/)
 * [Mermaid](https://mermaid-js.github.io/mermaid/#/)
 * [LaTeX maths expressions](https://en.wikibooks.org/wiki/LaTeX/Mathematics).
+* [BPMN diagrams](https://bpmn.io)
 
 ## Local assets
 

@@ -52,5 +52,6 @@ end
 require 'block/plantuml-block'
 require 'block/mermaid-block'
 require 'block/mathjax-block'
+require 'block/bpmn-block'
 require 'block/raw-block'
 

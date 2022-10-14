@@ -12,4 +12,4 @@ module JekyllLocalDiagram
     end
 end
   
-Liquid::Template.register_tag('bpmn', JekyllLocalDiagram::MathJaxBlock)
+Liquid::Template.register_tag('bpmn', JekyllLocalDiagram::BpmnBlock)

@@ -10,7 +10,6 @@ module JekyllLocalDiagram
         "bpmn-to-image #{input}:#{output}"
       end
     end
-  end
+end
   
-  Liquid::Template.register_tag('mathjax', JekyllLocalDiagram::MathJaxBlock)
-  
+Liquid::Template.register_tag('bpmn', JekyllLocalDiagram::MathJaxBlock)
